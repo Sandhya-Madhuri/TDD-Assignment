@@ -1,6 +1,6 @@
 # TDD-Assignment
 TDD Assignment Incubyte
 
-#run unit tests
+## Run unit tests
 ``` npm i    ```
 ```npm test ```
