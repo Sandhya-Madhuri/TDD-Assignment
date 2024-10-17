@@ -27,9 +27,10 @@ describe("String Calculator", () => {
     expect(calculator.add("1\n2,3,4")).toBe(10);
   });
 
-  test.todo(
-    'should return 6 when using a custom delimiter ";" with input "//;\\n1;2;3"'
-  );
+  test('should return  6 when using a custom delimiter ";" with input "//;\\n1;2;3"', () => {
+    expect(calculator.add("//;\n1;2;3")).toBe(6);
+  });
+
   test.todo("should throw exception for negative numbers");
   test.todo("should throw exception for multiple negative numbers");
 });
