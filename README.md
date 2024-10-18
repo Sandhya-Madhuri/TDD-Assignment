@@ -2,5 +2,8 @@
 TDD Assignment Incubyte
 
 ## Run unit tests
-``` npm i    ```
-```npm test ```
+**Install libraries required using below command** 
+- ``` npm i    ```
+
+**Run tests**
+- ```npm test ```
