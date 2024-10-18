@@ -9,8 +9,11 @@ export default class StringCalculator {
 
     if (numbers.startsWith("//")) {
       const newLineIndex = numbers.indexOf("\n");
-      const customDelimiter = numbers.substring(2, newLineIndex); //custom delimiter
-      delimiterRegex = new RegExp(`[${customDelimiter}]`);
+      const delimiterString = numbers.substring(2, newLineIndex); //custom delimiter
+      delimiterRegex = new RegExp(
+        `[${delimiterString.replace(/[\[\]]/g, "")}]`
+      );
+
       numbers = numbers.substring(newLineIndex + 1);
     }
 
@@ -25,7 +28,9 @@ export default class StringCalculator {
         "negative numbers not allowed: " + negativeNumbers.join(",")
       );
 
-    return numsArray.reduce((sum, num) => sum + num, 0);
+    return numsArray
+      .filter((num) => num <= 1000)
+      .reduce((sum, num) => sum + num, 0);
   }
 
   getCalledCount() {
