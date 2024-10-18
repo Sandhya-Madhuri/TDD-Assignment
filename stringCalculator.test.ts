@@ -57,6 +57,9 @@ describe("String Calculator", () => {
     expect(calculator.add("//[***]\n1***2***3")).toBe(6);
   });
 
+  test('should handle multiple delimiters like "//[*][%]\\n1*2%3" and return 6', () => {
+    expect(calculator.add("//[*][%]\\n1*2%3")).toBe(6);
+  });
   //getCalledCount
   test("should return 0 when add is not called", () => {
     expect(calculator.getCalledCount()).toBe(0);
