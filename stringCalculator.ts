@@ -1,5 +1,8 @@
 export default class StringCalculator {
+  count = 0;
+
   add(numbers: string): number {
+    this.count++;
     if (numbers === "") return 0;
 
     let delimiterRegex = /[\n,]+/; //default delimiterRegx
@@ -23,5 +26,9 @@ export default class StringCalculator {
       );
 
     return numsArray.reduce((sum, num) => sum + num, 0);
+  }
+
+  getCalledCount() {
+    return this.count;
   }
 }

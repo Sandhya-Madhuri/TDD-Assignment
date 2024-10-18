@@ -42,4 +42,17 @@ describe("String Calculator", () => {
       "negative numbers not allowed: -2,-3"
     );
   });
+  test("should return 0 when add is not called", () => {
+    expect(calculator.getCalledCount()).toBe(0);
+  });
+  test("should return 1 when add is called once", () => {
+    calculator.add("1,3");
+    expect(calculator.getCalledCount()).toBe(1);
+  });
+
+  test("should return 2 when add is called twice", () => {
+    calculator.add("1");
+    calculator.add("");
+    expect(calculator.getCalledCount()).toBe(2);
+  });
 });
